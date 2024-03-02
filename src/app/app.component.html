@@ -1,0 +1,48 @@
+<nav class="container">
+  <input #search class="search" type="search" placeholder="Search your text...">
+  <button (click)="searchData(search)"  class="search-btn">Search</button>
+</nav>
+<main>
+  <!-- <h1 class="title">Dictionary</h1> -->
+  <div *ngIf="fetchData && !spinner" class="result-container">
+      <div *ngIf="word" class="word-box">
+          <h1 class="word-txt">Word</h1>
+          <em><strong><q class="word-data">{{word | titlecase}}</q></strong></em>
+      </div>
+
+      <div *ngIf="meaning" class="meaning-box">
+          <h1 class="word-txt">Meanings</h1>
+          <em *ngIf="partOfSpeech"><strong class="word-data">{{partOfSpeech}}</strong></em>
+          <q class="word-data">{{meaning}}</q>
+          <em *ngIf="partOfSpeech1 && word==userData"><strong class="word-data">{{partOfSpeech1}}</strong></em>
+          <q *ngIf="meaning1 && word==userData" class="word-data">{{meaning1}}</q>
+          <em *ngIf="partOfSpeech2 && word==userData"><strong class="word-data">{{partOfSpeech2}}</strong></em>
+          <q *ngIf="meaning2 && word==userData" class="word-data">{{meaning2}}</q>
+      </div>
+      
+      <div *ngIf="audio" class="audio-box">
+          <h1 class="word-txt">Audio</h1>
+          <audio style="color: red;" class="word-data audio" src="{{audio}}" controls></audio>
+      </div>
+
+      <div *ngIf="sourceUlr" class="sourceUrl-box">
+          <h1 class="word-txt">Source Url</h1>
+          <a class="word-data" href="{{sourceUlr}}" target="_blank">{{sourceUlr}}</a>
+      </div>
+  </div>
+
+  <div *ngIf="!fetchData && !spinner && !noMatch"  class="no-data-container">
+      <div class="No-data">
+          <h1 class="no-data-available">Dictionary Search Your Word!!!</h1>
+      </div>
+  </div>
+
+  <div *ngIf="!fetchData && spinner || spinner" class="no-data-container">
+      <div class="spinner"></div>
+      <h1 class="word-txt">Fetching Data!!!</h1>
+  </div>
+
+  <div *ngIf="!fetchData && !spinner && noMatch" class="no-data-container">
+      <h1 class="word-noMatch">No Match Found For <q><u class="word-noMatch">{{word}}</u></q> ):</h1>
+  </div>
+</main>

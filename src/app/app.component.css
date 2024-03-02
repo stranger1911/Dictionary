@@ -1,0 +1,140 @@
+.container{
+    max-width: 100%;
+    background-color: #E4632D;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+
+
+.search{
+    margin: 1rem;
+    width: 30rem;
+    padding: 1rem;
+    border: none;
+    border-radius: 1rem;
+    font-size: 1.6rem;
+}
+
+.search:focus{
+    outline: none;
+}
+
+.search-btn{
+    padding: 1rem;
+    border: none;
+    border-radius: 1rem;
+    font-size: 1.6rem;
+    cursor: pointer;
+}
+
+.search-btn:focus , .search-btn:hover{
+    outline: none;
+    background-color: #eff6e0;
+    color: #E4632D;
+}
+
+
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 2rem;
+}
+
+/* .title{
+    font-size: 3.2rem;
+    margin-top: 3rem;
+    background-color: #E4632D;
+    display: inline-block;
+    padding: 0.5rem;
+    border-radius: 1rem;
+} */
+
+.result-container{
+    width: 60vmax;
+    background-color: #E4632D;
+    min-height: 30vh;
+    margin-top: 2rem;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
+    border-radius: 1rem;
+    padding: 1rem;
+}
+
+
+
+.word-txt{
+    font-size: 1.6rem;
+    margin: 1rem;
+    background-color: #E4632D;
+    display: inline-block;
+    padding: 0.5rem;
+    border-radius: 1rem;
+}
+
+.word-noMatch{
+    font-size: 2.4rem;
+}
+
+.word-data{
+    margin: 0 5rem;
+    font-size: 1.4rem;
+    display: block;
+    line-height: 2;
+}
+
+.word-box, .meaning-box, .audio-box , .sourceUrl-box{
+    min-height: 8rem;
+    width: 55vmax;
+    background-color: #eff6e0;
+    border-radius: 1rem;
+}
+
+.audio{
+    width: 25rem;
+    height: 3rem;
+    margin-bottom: 2rem;
+    margin-left: 1rem;
+}
+
+.no-data-container{
+    width: 60vmax;
+    background-color: #E4632D;
+    min-height: 30vh;
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
+    border-radius: 1rem;
+    padding: 1rem;
+}
+
+.no-data-available{
+    font-size: 3.2rem;
+}
+
+.spinner{
+    height: 5rem;
+    width: 5rem;
+    border-radius: 50%;
+    border: 2.5px solid rgb(255, 255, 255);
+    border-top-color: rgb(17, 1, 22);
+    animation: spin .5s linear infinite;
+}
+
+@keyframes spin {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
